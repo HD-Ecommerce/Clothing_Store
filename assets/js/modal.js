@@ -30,7 +30,7 @@ const modal = (function () {
         modal.classList.add("active");
         login.classList.add("active");
         register.classList.remove("active");
-        userContainer.classList.toggle("active");
+        userContainer.classList.remove("active");
       };
     });
     btnRegisters.forEach((btn) => {
@@ -39,7 +39,7 @@ const modal = (function () {
         modal.classList.add("active");
         login.classList.remove("active");
         register.classList.add("active");
-        userContainer.classList.toggle("active");
+        userContainer.classList.remove("active");
       };
     });
   }

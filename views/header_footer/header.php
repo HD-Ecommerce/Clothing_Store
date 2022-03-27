@@ -80,7 +80,7 @@
           >
           </path>
         </svg>
-        <span>2</span>
+        <span>0</span>
         </a>
     </div>
   </div>
