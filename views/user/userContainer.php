@@ -1,6 +1,6 @@
 <div class="user__container">
    <?php if(isset($_SESSION['login'])) {?>  
-    <a class="" href="?act=account&handle=profile">
+    <a class="" href="/">
       <svg
         width="31"
         height="31"

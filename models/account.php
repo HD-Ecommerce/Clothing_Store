@@ -76,15 +76,35 @@ class Account extends Model
         header('location: ?act=home');
     }
 
-    function Profile($id) {
-        $query =  "SELECT * FROM nguoidung WHERE idND = $id";
-        return $this->conn->query($query)->fetch_assoc();;
-    }
 
-    function Update($ten, $sdt, $email, $diaChi) {
-        $id = $_SESSION['login']['idND'];
-        $query =  "UPDATE `nguoidung` SET `tenND`='$ten',`SDT`=' $sdt',`email`='$email',`diaChi`='$diaChi' WHERE idND = $id";
-        $this->conn->query($query);
-        header("Location: ?act=account&handle=profile");
-    }
+    
+    // function account()
+    // {
+    //     $id = $_SESSION['login']['MaND'];
+    //     return $this->conn->query("SELECT * from NguoiDung where MaND = $id")->fetch_assoc();
+    // }
+    // function update_account($data)
+    // {
+    //     $v = "";
+    //     foreach ($data as $key => $value) {
+    //         $v .= $key . "='" . $value . "',";
+    //     }
+    //     $v = trim($v, ",");
+
+    //     $query = "UPDATE NguoiDung SET  $v   WHERE  MaND = " . $_SESSION['login']['MaND'];
+
+    //     $result = $this->conn->query($query);
+        
+    //     if ($result == true) {
+    //         setcookie('doimk', 'Cập nhật tài khoản thành công', time() + 2);
+    //         header('Location: ?act=taikhoan&xuli=account#doitk');
+    //     } else {
+    //         setcookie('doimk', 'Mật khẩu xác nhận không đúng', time() + 2);
+    //         header('Location: ?act=taikhoan&xuli=account#doitk');
+    //     }
+    // }
+    // function error()
+    // {
+    //     header('location: ?act=errors');
+    // }
 }

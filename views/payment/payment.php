@@ -1,6 +1,3 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -106,7 +103,8 @@
                                 <div class="Jgz_oc">
                                     <div class="_2Pe7Hh">
                                         <select class="selectdc" name="diachi" id="diachi">
-                                            <option value="diachi1">Nguyễn Văn Hoàn 0965016595    338/51, Hoàng Diệu, Phường Bình Hiên, Quận Hải Châu, Đà Nẵng</option>
+                                            <option value="diachi1">Nguyễn Văn Hoàn (+84) 965016595    338/51, Hoàng Diệu, Phường Bình Hiên, Quận Hải Châu, Đà Nẵng</option>
+                                            <option value="diachi2">Nguyễn Thị Hoài (+84) 394854403    179/8 Phạm Hồng Thái, Phường 7, Thành Phố Vũng Tàu, Bà Rịa - Vũng Tàu</option>
                                         </select>
                                     </div>
                                 </div>

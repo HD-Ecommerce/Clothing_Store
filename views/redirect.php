@@ -22,8 +22,5 @@ switch ($act) {
                 break;
         }
         break;
-    case 'account':
-        require_once("user/profile.php");
-        break;
 }
 ?>
