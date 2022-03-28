@@ -39,7 +39,7 @@
                         $controller_obj->Logout();
                         break;
                     case 'profile':
-                        $controller_obj->Profile();
+                        $controller_obj->Account();
                         break;
                     case 'update':
                         $controller_obj->Update();

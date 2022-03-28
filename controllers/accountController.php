@@ -8,25 +8,6 @@ class AccountController
         $this->account_model = new Account();
     }
 
-    function Profile() {
-        $menu = $this->account_model->LoadMenu();
-        $id = isset($_SESSION['login']) ? $_SESSION['login']['idND'] : -1;
-        $user = $this->account_model->Profile($id);
-        require_once('views/index.php');
-    }
-
-    function Update() {        
-        $id = isset($_SESSION['login']) ? $_SESSION['login']['idND'] : -1;
-        $user = $this->account_model->Profile($id);
-        $check =  $this->account_model->CheckEmail($_POST['email']);
-        
-        if($check != "" && $user['email'] != $_POST['email']) {
-            $menu = $this->account_model->LoadMenu();
-            require_once('views/index.php');
-        } else {
-            $this->account_model->Update($_POST['tenND'],$_POST['SDT'],$_POST['email'],$_POST['diaChi']);
-        }
-    }
 
     function Register()
     {

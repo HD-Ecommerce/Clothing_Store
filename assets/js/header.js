@@ -38,17 +38,14 @@ const header = (function () {
   function renderItemMiniCart(list) {
     if (!list) return "";
 
-    const slNode = $("#cart-btn span");
     let html = "",
       price,
-      oldprice,
-      sl = 0;
+      oldprice;
     list.forEach((item) => {
-      sl += item.soLuong * 1;
-      // price = item.phanTram
-      //   ? item.donGia - (item.donGia / 100) * item.phanTram
-      //   : item.donGia;
-      // oldprice = item.phanTram ? numeral(item.donGia).format("0,0") + " ₫" : "";
+      price = item.phanTram
+        ? item.donGia - (item.donGia / 100) * item.phanTram
+        : item.donGia;
+      oldprice = item.phanTram ? numeral(item.donGia).format("0,0") + " ₫" : "";
       html += `<li>
                   <div
                     class="product__thumbnail"
@@ -65,14 +62,16 @@ const header = (function () {
         item.size
       }</span>
                     <div>
-                      <strong>${numeral(item.donGia).format("0,0")} ₫</strong>
+                      <strong>${numeral(price).format("0,0")} ₫</strong>
+                      <span class = "old-price" >
+                        ${oldprice}
+                      </span>
                     </div>
                     <p class="qty">SL: ${item.soLuong}</p>
                   </div>
                 </li>`;
     });
 
-    slNode.innerText = sl;
     return html;
   }
 
@@ -83,6 +82,7 @@ const header = (function () {
     const empty = '<h5 class = "qty-0" >Không có sản phẩm nào!</h5>';
     const listNode = $(".cart__container .mini__cart ul");
 
+    console.log(idND);
     if (idND != -1) {
       let listProduct = await ajax_app.Post(
         "?act=cart&handle=listCart",
@@ -90,6 +90,7 @@ const header = (function () {
       );
 
       listProduct = JSON.parse(listProduct);
+      console.log(listProduct);
       listNode.innerHTML =
         listProduct.length > 0 ? renderItemMiniCart(listProduct) : empty;
     } else {
@@ -126,7 +127,6 @@ const header = (function () {
     UserHandle();
     MiniCartHandle();
     SideNavHandle();
-    LoadMiniCart();
   }
 
   return {

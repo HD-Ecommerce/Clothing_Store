@@ -42,7 +42,6 @@
     <!--===== JQUERY =====-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery.redirect@1.1.4/jquery.redirect.min.js"></script>
     <script type="module" src="./assets/js/range.js" ></script>
     <!--===== GLIDE SLIDER =====-->
     <script src="./assets/js/node_modules/@glidejs/glide/dist/glide.min.js"></script>
