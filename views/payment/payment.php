@@ -40,14 +40,16 @@
                                     require_once('../../controllers/CartController.php');
                                     $controller_obj = new CartController();
                                     // Dùng id người đăng nhập
-                                    $result = $controller_obj->list_payment(4);
+                                    $iddn = 1;
+                                    $result = $controller_obj->list_payment($iddn);
                                     $tongTienHang = 0;
+                                    $phiVanChuyen = 50000;
                                     while($row=mysqli_fetch_array($result)) {
                                         $dongia = $row['donGia'];
                                         $soluong = $row['soLuong'];
                                         $thanhtien = $dongia * $soluong;
                                         $tongTienHang += $thanhtien;
-                                        $phiVanChuyen = 50000;
+                                        
                                         ?>
                                         <div class="jNDkp2">
                                             <div>
