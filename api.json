@@ -1,0 +1,37 @@
+curl --location --request POST 'https://dev-online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/fee' \
+                    --header 'Content-Type: application/json' \
+                    --header 'Token: a102819a-b9ab-11ec-935b-4e3cff801388' \
+                    --header 'ShopId: 3212637' \
+                    --header 'Content-Type: text/plain' \
+                    --data-raw '{
+                    "from_district_id":1454,
+                    "service_id":53320,
+                    "service_type_id":null,
+                    "to_district_id":1452,
+                    "to_ward_code":"21012",
+                    "height":50,
+                    "length":20,
+                    "weight":200,
+                    "width":20,
+                    "insurance_value":10000,
+                    "coupon": null
+                    }'
+
+curl -X POST -H "Content-Type: application / json" \
+-H "Token: a102819a-b9ab-11ec-935b-4e3cff801388" \
+-H "ShopId: 3212637" \
+-H "Content-Type: text/plain" \
+-d '{
+    "from_district_id":1454,
+    "service_id":53320,
+    "service_type_id":null,
+    "to_district_id":1452,
+    "to_ward_code":"21012",
+    "height":50,
+    "length":20,
+    "weight":200,
+    "width":20,
+    "insurance_value":10000,
+    "coupon": null
+    }' \
+https://dev-online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/fee                    
